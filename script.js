@@ -16,12 +16,14 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setPixelRatio( window.devicePixelRatio );
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial({ color: 0xff6600 });
+const texture = new THREE.TextureLoader().load('jon.png')
+const material = new THREE.MeshBasicMaterial({map: texture});
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 const donut_geo = new THREE.TorusGeometry(10, 3, 16, 100);
-const donut_mat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+const donut_tex = new THREE.TextureLoader().load('jon.png')
+const donut_mat = new THREE.MeshBasicMaterial({map: donut_tex});
 const donut = new THREE.Mesh(donut_geo, donut_mat);
 scene.add(donut);
 
